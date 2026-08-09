@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Trufill</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Manrope:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="brand">
+      <div class="mark">&#10003;</div>
+      <h1>Trufill</h1>
+      <p class="tagline">Never fill the same form twice</p>
+    </header>
+
+    <main id="app">
+      <section id="login-panel" class="card">
+        <p class="eyebrow">Sign in</p>
+        <button class="oauth-btn" id="google-btn">Continue with Google</button>
+        <button class="oauth-btn" id="apple-btn">Continue with Apple</button>
+        <p class="oauth-note">Google and Apple sign-in are one toggle away in your Supabase dashboard (Authentication -&gt; Providers) once you've added your own OAuth credentials there. Email works right now, no setup needed.</p>
+        <form id="login-form">
+          <input type="email" id="email-input" placeholder="name@example.com" required />
+          <button type="submit" class="primary-btn">Email me a sign-in link</button>
+        </form>
+        <p id="login-status" class="status-text"></p>
+      </section>
+
+      <section id="upload-panel" class="card hidden">
+        <div class="session-row">
+          <span id="session-email" class="eyebrow"></span>
+          <a href="#" id="sign-out" class="signout-link">Sign out</a>
+        </div>
+        <p class="eyebrow">Sample form</p>
+        <p class="body-text">This stands in for a real bank form until the fillability audit is done. Upload it (or your own fillable PDF) to see the loop work end to end.</p>
+        <a href="/sample-form.pdf" download class="secondary-btn">Download the sample form</a>
+        <form id="upload-form">
+          <input type="file" id="pdf-input" accept="application/pdf" required />
+          <button type="submit" class="primary-btn">Upload a form</button>
+        </form>
+        <p id="upload-error" class="error-text"></p>
+      </section>
+
+      <section id="fields-panel" class="card hidden">
+        <div class="progress-row">
+          <span id="progress-label" class="eyebrow"></span>
+        </div>
+        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        <div id="fields-list"></div>
+        <button id="fill-btn" class="primary-btn">Review &amp; download</button>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
