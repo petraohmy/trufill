@@ -1,8 +1,8 @@
 // Fill these in with your own Supabase project's values —
 // Dashboard -> Project Settings -> API. The anon key is safe to expose in
 // frontend code by design; it only grants what your RLS policies allow.
-const SUPABASE_URL = "https://your-project-ref.supabase.co";
-const SUPABASE_ANON_KEY = "your-anon-public-key";
+const SUPABASE_URL = "https://trgqxlgxrrqhdelxqowq.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_rUUl8HuwUE0-ONvQMg4uGA_KBEbakiR";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
